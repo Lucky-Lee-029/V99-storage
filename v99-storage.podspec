@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.authors      = package["author"]
 
   s.platforms    = { :ios => "11.0", :tvos => "12.0", :osx => "10.14" }
-  s.source       = { :git => "https://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@github.com/v99-mobile/v99-storage.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/Lucky-Lee-029/V99-storage.git", :tag => "#{s.version}" }
 
 
   # All source files that should be publicly visible
