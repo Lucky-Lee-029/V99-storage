@@ -18,13 +18,47 @@ Pod::Spec.new do |s|
   s.source_files = [
     "ios/**/*.{m,mm}",
     "ios/MmkvModule.h",
-    "cpp/**/*.{h,cpp}"
+    "cpp/**/*.{h,cpp}",
   ]
   
   s.preserve_paths = [
     'ios/**/*.h'
   ]
 
-  s.dependency "MMKV", ">= 1.2.13"
+  s.subspec 'MMKV' do |ss|
+    ss.ios.deployment_target = "11.0"
+
+    ss.source_files =  "MMKV/iOS/MMKV/MMKV", "MMKV/iOS/MMKV/MMKV/*.{h,mm,hpp}"
+    ss.public_header_files = "MMKV/iOS/MMKV/MMKV/MMKV.h", "MMKV/iOS/MMKV/MMKV/MMKVHandler.h"
+
+    ss.framework    = "CoreFoundation"
+    ss.libraries    = "z", "c++"
+    ss.requires_arc = false
+    ss.pod_target_xcconfig = {
+      "CLANG_CXX_LANGUAGE_STANDARD" => "gnu++17",
+      "CLANG_CXX_LIBRARY" => "libc++",
+      "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF" => "NO",
+    }
+
+    ss.subspec 'MMKVCore' do |sss|
+      sss.ios.deployment_target = "11.0"
+
+      sss.source_files = "MMKV/Core", "MMKV/Core/*.{h,cpp,hpp}", "MMKV/Core/aes/*", "MMKV/Core/aes/openssl/*", "MMKV/Core/crc32/*.h"
+      sss.public_header_files = "MMKV/Core/MMBuffer.h", "MMKV/Core/MMKV.h", "MMKV/Core/MMKVLog.h", "MMKV/Core/MMKVPredef.h", "MMKV/Core/PBUtility.h", "MMKV/Core/ScopedLock.hpp", "MMKV/Core/ThreadLock.h", "MMKV/Core/aes/openssl/openssl_md5.h", "MMKV/Core/aes/openssl/openssl_opensslconf.h"
+      sss.compiler_flags = '-x objective-c++'
+
+      sss.requires_arc = ['MMKV/Core/MemoryFile.cpp', 'MMKV/Core/ThreadLock.cpp', 'MMKV/Core/InterProcessLock.cpp', 'MMKV/Core/MMKVLog.cpp', 'MMKV/Core/PBUtility.cpp', 'MMKV/Core/MemoryFile_OSX.cpp', 'MMKV/Core/aes/openssl/openssl_cfb128.cpp', 'MMKV/Core/aes/openssl/openssl_aes_core.cpp', 'aes/openssl/openssl_md5_one.cpp', 'aes/openssl/openssl_md5_dgst.cpp', 'aes/AESCrypt.cpp']
+
+      sss.framework    = "CoreFoundation"
+      sss.ios.frameworks = "UIKit"
+      sss.libraries    = "z", "c++"
+      sss.pod_target_xcconfig = {
+        "CLANG_CXX_LANGUAGE_STANDARD" => "gnu++17",
+        "CLANG_CXX_LIBRARY" => "libc++",
+        "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF" => "NO",
+      }
+    end
+  end
+  
   s.dependency "React-Core"
 end
