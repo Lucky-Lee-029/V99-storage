@@ -18,12 +18,13 @@
  * limitations under the License.
  */
 
-#import "MMKV.h"
-#import <MMKVCore/MMKV.h>
-#import <MMKVCore/MMKVLog.h>
-#import <MMKVCore/ScopedLock.hpp>
-#import <MMKVCore/ThreadLock.h>
-#import <MMKVCore/openssl_md5.h>
+#import "MMKViOS.h"
+#import <MMKVLog.h>
+#import <MMKV.h>
+#import <MMKVLog.h>
+#import <ScopedLock.hpp>
+#import <ThreadLock.h>
+#import <openssl_md5.h>
 
 #if defined(MMKV_IOS) && !defined(MMKV_IOS_EXTENSION)
 #import <UIKit/UIKit.h>

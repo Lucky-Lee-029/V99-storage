@@ -34,11 +34,6 @@ Pod::Spec.new do |s|
     ss.framework    = "CoreFoundation"
     ss.libraries    = "z", "c++"
     ss.requires_arc = false
-    ss.pod_target_xcconfig = {
-      "CLANG_CXX_LANGUAGE_STANDARD" => "gnu++17",
-      "CLANG_CXX_LIBRARY" => "libc++",
-      "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF" => "NO",
-    }
 
     ss.subspec 'MMKVCore' do |sss|
       sss.ios.deployment_target = "11.0"
@@ -52,11 +47,6 @@ Pod::Spec.new do |s|
       sss.framework    = "CoreFoundation"
       sss.ios.frameworks = "UIKit"
       sss.libraries    = "z", "c++"
-      sss.pod_target_xcconfig = {
-        "CLANG_CXX_LANGUAGE_STANDARD" => "gnu++17",
-        "CLANG_CXX_LIBRARY" => "libc++",
-        "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF" => "NO",
-      }
     end
   end
   

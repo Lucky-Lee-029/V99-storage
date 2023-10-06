@@ -9,7 +9,7 @@
 #pragma once
 
 #import <Foundation/Foundation.h>
-#import <MMKV/MMKV.h>
+#import <MMKViOS.h>
 #import <jsi/jsi.h>
 
 using namespace facebook;
