@@ -173,7 +173,7 @@
     ]
   },
   "codegenConfig": {
-    "name": "reactnativemmkv",
+    "name": "v99storage",
     "type": "modules",
     "jsSrcsDir": "./lib/module"
   }

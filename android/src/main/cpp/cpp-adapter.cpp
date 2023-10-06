@@ -62,10 +62,10 @@ std::string jstringToStdString(JNIEnv* env, jstring jStr) {
   return ret;
 }
 
-extern "C" JNIEXPORT void JNICALL Java_com_reactnativemmkv_MmkvModule_nativeInstall(JNIEnv* env,
-                                                                                    jobject clazz,
-                                                                                    jlong jsiPtr,
-                                                                                    jstring path) {
+extern "C" JNIEXPORT void JNICALL Java_com_v99storage_MmkvModule_nativeInstall(JNIEnv* env,
+                                                                               jobject clazz,
+                                                                               jlong jsiPtr,
+                                                                               jstring path) {
   MMKV::initializeMMKV(jstringToStdString(env, path));
 
   auto runtime = reinterpret_cast<jsi::Runtime*>(jsiPtr);

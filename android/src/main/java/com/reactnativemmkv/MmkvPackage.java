@@ -1,4 +1,4 @@
-package com.reactnativemmkv;
+package com.v99storage;
 
 import androidx.annotation.NonNull;
 

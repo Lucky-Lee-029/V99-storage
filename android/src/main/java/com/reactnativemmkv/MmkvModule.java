@@ -1,4 +1,4 @@
-package com.reactnativemmkv;
+package com.v99storage;
 
 import android.util.Log;
 
@@ -29,7 +29,7 @@ public class MmkvModule extends ReactContextBaseJavaModule {
   public boolean install(@Nullable String rootDirectory) {
     try {
       Log.i(NAME, "Loading C++ library...");
-      System.loadLibrary("reactnativemmkv");
+      System.loadLibrary("v99storage");
 
       JavaScriptContextHolder jsContext = getReactApplicationContext().getJavaScriptContextHolder();
       if (rootDirectory == null) {

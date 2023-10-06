@@ -1,4 +1,4 @@
-project(ReactNativeMMKV)
+project(V99Storage)
 cmake_minimum_required(VERSION 3.9.0)
 
 set (PACKAGE_NAME "react-native-mmkv")
@@ -15,7 +15,7 @@ include_directories(
 # Add MMKV core sources
 add_subdirectory(../MMKV/Core core)
 # Add react-native-mmkv sources
-add_library(reactnativemmkv  # <-- Library name
+add_library(v99storage  # <-- Library name
         SHARED
         src/main/cpp/cpp-adapter.cpp
         src/main/cpp/MmkvHostObject.cpp
@@ -23,7 +23,7 @@ add_library(reactnativemmkv  # <-- Library name
 )
 # Configure C++ 17
 set_target_properties(
-        reactnativemmkv PROPERTIES
+        v99storage PROPERTIES
         CXX_STANDARD 17
         CXX_EXTENSIONS OFF
         POSITION_INDEPENDENT_CODE ON
@@ -33,7 +33,7 @@ find_package(ReactAndroid REQUIRED CONFIG)
 find_library(log-lib log)
 
 target_link_libraries(
-        reactnativemmkv
+        v99storage
         core                # <-- MMKV core
         ${log-lib}          # <-- Logcat logger
         ReactAndroid::jsi   # <-- JSI
