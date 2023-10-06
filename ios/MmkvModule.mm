@@ -7,7 +7,7 @@
 
 #import "../cpp/TypedArray.h"
 #import "MmkvHostObject.h"
-#import <MMKV/MMKV.h>
+#import <MMKV.h>
 
 using namespace facebook;
 
