@@ -11,8 +11,8 @@ yarn add @tanstack/query-sync-storage-persister @tanstack/react-query-persist-cl
 2. Add next code into your app
 
 ```ts
-import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister'
-import { MMKV } from "react-native-mmkv"
+import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
+import { MMKV } from '@v99-storage';
 
 const storage = new MMKV();
 
@@ -29,7 +29,9 @@ const clientStorage = {
   },
 };
 
-export const clientPersister = createSyncStoragePersister({ storage: clientStorage });
+export const clientPersister = createSyncStoragePersister({
+  storage: clientStorage,
+});
 ```
 
 3. Use created `clientPersister` in your root component (eg. `App.tsx`)

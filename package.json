@@ -46,13 +46,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/mrousavy/react-native-mmkv",
+  "repository": "https://github.com/Lucky-Lee-029/V99-storage",
   "author": "Marc Rousavy <marcrousavy@hotmail.com> (https://github.com/mrousavy)",
   "license": "(MIT AND BSD-3-Clause)",
   "bugs": {
-    "url": "https://github.com/mrousavy/react-native-mmkv/issues"
+    "url": "https://github.com/Lucky-Lee-029/V99-storage/issues"
   },
-  "homepage": "https://github.com/mrousavy/react-native-mmkv#readme",
+  "homepage": "https://github.com/Lucky-Lee-029/V99-storage#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

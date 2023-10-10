@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "react-native-mmkv": ["./src/index"]
+      "@v99-storage": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

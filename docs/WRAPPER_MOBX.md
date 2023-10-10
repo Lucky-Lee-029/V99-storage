@@ -3,10 +3,10 @@
 If you want to use MMKV with [mobx-persist-store](https://github.com/quarrant/mobx-persist-store), create the following `storage` object:
 
 ```ts
-import { configurePersistable } from 'mobx-persist-store'
-import { MMKV } from "react-native-mmkv"
+import { configurePersistable } from 'mobx-persist-store';
+import { MMKV } from '@v99-storage';
 
-const storage = new MMKV()
+const storage = new MMKV();
 
 configurePersistable({
   storage: {
@@ -14,5 +14,5 @@ configurePersistable({
     getItem: (key) => storage.getString(key),
     removeItem: (key) => storage.delete(key),
   },
-})
+});
 ```

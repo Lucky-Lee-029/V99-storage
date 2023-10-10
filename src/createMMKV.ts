@@ -1,5 +1,5 @@
 import { NativeModules, Platform } from 'react-native';
-import type { MMKVConfiguration, NativeMMKV } from 'react-native-mmkv';
+import type { MMKVConfiguration, NativeMMKV } from '@v99-storage';
 
 // global func declaration for JSI functions
 declare global {
@@ -19,7 +19,7 @@ export const createMMKV = (config: MMKVConfiguration): NativeMMKV => {
       let message =
         'Failed to create a new MMKV instance: The native MMKV Module could not be found.';
       message +=
-        '\n* Make sure react-native-mmkv is correctly autolinked (run `npx react-native config` to verify)';
+        '\n* Make sure @v99-storage is correctly autolinked (run `npx react-native config` to verify)';
       if (Platform.OS === 'ios' || Platform.OS === 'macos') {
         message += '\n* Make sure you ran `pod install` in the ios/ directory.';
       }
@@ -33,7 +33,7 @@ export const createMMKV = (config: MMKVConfiguration): NativeMMKV => {
         if (ExpoConstants.appOwnership === 'expo') {
           // We're running Expo Go
           throw new Error(
-            'react-native-mmkv is not supported in Expo Go! Use EAS (`expo prebuild`) or eject to a bare workflow instead.'
+            '@v99-storage is not supported in Expo Go! Use EAS (`expo prebuild`) or eject to a bare workflow instead.'
           );
         } else {
           // We're running Expo bare / standalone

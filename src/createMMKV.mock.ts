@@ -1,4 +1,4 @@
-import type { NativeMMKV } from 'react-native-mmkv';
+import type { NativeMMKV } from '@v99-storage';
 
 /* Mock MMKV instance for use in tests */
 export const createMockMMKV = (): NativeMMKV => {

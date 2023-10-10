@@ -1,5 +1,5 @@
 /* global localStorage */
-import type { MMKVConfiguration, NativeMMKV } from 'react-native-mmkv';
+import type { MMKVConfiguration, NativeMMKV } from '@v99-storage';
 import { createTextEncoder } from './createTextEncoder';
 
 const canUseDOM =
