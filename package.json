@@ -14,7 +14,7 @@
     "android/CMakeLists.txt",
     "android/libs",
     "cpp",
-    "MMKV/Core",
+    "MMKV/CoreMMKV",
     "MMKV/iOS",
     "lib/commonjs",
     "lib/module",
