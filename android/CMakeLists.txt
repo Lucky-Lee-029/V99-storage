@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 # Add headers search paths
 include_directories(
-        ../MMKV/Core
+        ../MMKV/CoreMMKV
         ../cpp
 )
 
